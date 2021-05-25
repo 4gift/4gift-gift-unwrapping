@@ -1,82 +1,191 @@
-const elems = [
-    document.getElementById("restart-button"),
-    document.getElementById("pause-button"),
-    document.getElementById("elem-intro-text"),
-    document.getElementById("elem-gift-box-empty"),
-    document.getElementById("elem-gift-box-empty-title"),
-    document.getElementById("elem-gift-box-empty-img"),
-    document.getElementById("elem-gift-box-letter"),
-    document.getElementById("elem-gift-box-tissue-paper"),
-    document.getElementById("elem-gift-box-dust-bag"),
-    document.getElementById("elem-gift-box-cover"),
-    document.getElementById("elem-tissue-paper"),
-    document.getElementById("elem-dust-bag"),
-    document.getElementById("elem-envelope"),
-    document.getElementById("elem-envelope-top-1"),
-    document.getElementById("elem-envelope-top-2"),
-    document.getElementById("elem-envelope-back"),
-    document.getElementById("elem-envelope-front"),
-    document.getElementById("elem-letter"),
-    document.getElementById("elem-letter-text"),
-    document.getElementById("elem-box"),
-    document.getElementById("elem-gift")
-];
-const pauseButton = document.getElementById("pause-button");
+class GiftUnwrapping {
 
+    elems;
+    pauseButton;
 
-elems.forEach(elem => {
-    if (elem)
-        elem.style.visibility = 'hidden'
-});
+    initialize(brandName, message, enjoyTheGiftString, containerDiv) {
 
-window.addEventListener('load', (event) => {
+        //restart button
+        const restartButton = document.createElement("button");
+        restartButton.id = "restart-button";
+        restartButton.onclick = () => this.restartAnimation();
+        const restartButtonImg = document.createElement("img");
+        restartButtonImg.src = brandName + "/desktop/restart-icon@2x.png";
+        restartButton.appendChild(restartButtonImg);
+        containerDiv.appendChild(restartButton);
+    
+        //pause button
+        const pauseButton = document.createElement("button");
+        pauseButton.id = "pause-button";
+        pauseButton.onclick = () => this.toggleAnimation();
+        const pauseButtonImg = document.createElement("img");
+        pauseButtonImg.src = brandName + "/desktop/pause-icon@2x.png";
+        pauseButton.appendChild(pauseButtonImg);
+        containerDiv.appendChild(pauseButton);
+    
+        //exit button
+        const exitButton = document.createElement("button");
+        exitButton.id = "exit-button";
+        exitButton.onclick = () => this.exitAnimation();
+        const exitButtonImg = document.createElement("img");
+        exitButtonImg.src = brandName + "/desktop/exit-icon@2x.png";
+        exitButton.appendChild(exitButtonImg);
+        containerDiv.appendChild(exitButton);
+    
+        //gift box cover
+        const elemGiftBoxCover = document.createElement("div");
+        elemGiftBoxCover.id = "elem-gift-box-cover";
+        containerDiv.appendChild(elemGiftBoxCover);
+    
+        //gift box empty
+        const elemGiftBoxEmpty = document.createElement("div");
+        elemGiftBoxEmpty.id = "elem-gift-box-empty";
+        elemGiftBoxEmpty.classList.add("elem-gift-boxes");
+        const elemGiftBoxEmptyTitle = document.createElement("h4");
+        elemGiftBoxEmptyTitle.id = "elem-gift-box-empty-title";
+        elemGiftBoxEmptyTitle.textContent = enjoyTheGiftString;
+        const elemGiftBoxEmptyImg = document.createElement("img");
+        elemGiftBoxEmptyImg.id = "elem-gift-box-empty-img";
+        elemGiftBoxEmptyImg.src = brandName + "/desktop/gift@2x.png";
+        elemGiftBoxEmpty.appendChild(elemGiftBoxEmptyTitle);
+        elemGiftBoxEmpty.appendChild(elemGiftBoxEmptyImg);
+        animationContainer.appendChild(elemGiftBoxEmpty);
+    
+        //gift box dust bag
+        const elemGiftBoxDustBag = document.createElement("div");
+        elemGiftBoxDustBag.id = "elem-gift-box-dust-bag";
+        elemGiftBoxDustBag.classList.add("elem-gift-boxes");
+        animationContainer.appendChild(elemGiftBoxDustBag);
+    
+        //gift box tissue paper
+        const elemGiftBoxTissuePaper = document.createElement("div");
+        elemGiftBoxTissuePaper.id = "elem-gift-box-tissue-paper";
+        elemGiftBoxTissuePaper.classList.add("elem-gift-boxes");
+        //envelope
+        const elemEnvelope = document.createElement("div");
+        elemEnvelope.id = "elem-envelope";
+        //envelope front
+        const elemEnvelopeFront = document.createElement("img");
+        elemEnvelopeFront.id = "elem-envelope-front";
+        elemEnvelopeFront.src = brandName + "/desktop/envelope-front.png";
+        elemEnvelope.appendChild(elemEnvelopeFront);
+        //envelope back
+        const elemEnvelopeBack = document.createElement("img");
+        elemEnvelopeBack.id = "elem-envelope-back";
+        elemEnvelopeBack.src = brandName + "/desktop/envelope-back.png";
+        elemEnvelope.appendChild(elemEnvelopeBack);
+        //elem letter
+        const elemLetter = document.createElement("div");
+        elemLetter.id = "elem-letter";
+        const elemLetterP = document.createElement("p");
+        elemLetterP.innerHTML = message;
+        elemLetter.appendChild(elemLetterP);
+        elemEnvelope.appendChild(elemLetter);
+        //envelope top 2
+        const elemEnvelopeTop2 = document.createElement("img");
+        elemEnvelopeTop2.id = "elem-envelope-top-2";
+        elemEnvelope.appendChild(elemEnvelopeTop2);
+        //envelope top 1
+        const elemEnvelopeTop1 = document.createElement("img");
+        elemEnvelopeTop1.id = "elem-envelope-top-1";
+        elemEnvelope.appendChild(elemEnvelopeTop1);    
+    
+        elemGiftBoxTissuePaper.appendChild(elemEnvelope);
+        animationContainer.appendChild(elemGiftBoxTissuePaper);
 
-    elems.forEach(elem => {
-        if (elem)
-            elem.style.visibility = 'visible'
-    });
+        this.elems = [
+            document.getElementById("restart-button"),
+            document.getElementById("pause-button"),
+            document.getElementById("elem-intro-text"),
+            document.getElementById("elem-gift-box-empty"),
+            document.getElementById("elem-gift-box-empty-title"),
+            document.getElementById("elem-gift-box-empty-img"),
+            document.getElementById("elem-gift-box-letter"),
+            document.getElementById("elem-gift-box-tissue-paper"),
+            document.getElementById("elem-gift-box-dust-bag"),
+            document.getElementById("elem-gift-box-cover"),
+            document.getElementById("elem-tissue-paper"),
+            document.getElementById("elem-dust-bag"),
+            document.getElementById("elem-envelope"),
+            document.getElementById("elem-envelope-top-1"),
+            document.getElementById("elem-envelope-top-2"),
+            document.getElementById("elem-envelope-back"),
+            document.getElementById("elem-envelope-front"),
+            document.getElementById("elem-letter"),
+            document.getElementById("elem-letter-text"),
+            document.getElementById("elem-box"),
+            document.getElementById("elem-gift")
+        ];
 
-    start();
-});
+        this.pauseButton = document.getElementById("pause-button");
 
+        this.elems.forEach(elem => {
+            if (elem)
+                elem.style.visibility = 'hidden'
+        });
+        
+    }
 
-explode();
+    start() {
+        window.addEventListener('load', (event) => {        
+            this.elems.forEach(elem => {
+                if (elem)
+                    elem.style.visibility = 'visible'
+            });
+        
+            this.startAnimation();
+        });
+    }
 
-function start() {    
-    elems.forEach(elem => {
-        if (elem) {
-            elem.classList.add("animate");
-        }
-    });
+    toggleAnimation() {
+        this.pauseButton.classList.toggle("pressed");
+        this.elems.forEach(elem => {
+            if (elem) {
+                elem.classList.toggle("animation-paused");
+            }
+        });
+    }
+    
+    exitAnimation() {
+        //inserire quello che si vuole
+    }
+    
+    restartAnimation() {
+        this.resetAnimation();
+        setTimeout(() => {
+            this.startAnimation()
+        }, 500);
+    }
+
+    startAnimation() {    
+        this.elems.forEach(elem => {
+            if (elem) {
+                elem.classList.add("animate");
+            }
+        });
+    }
+    
+    resetAnimation() {
+        this.elems.forEach(elem => {
+            if (elem)
+                elem.classList.remove("animate");
+        });    
+    }
 }
 
-function toggleAnimation() {
-    pauseButton.classList.toggle("pressed");
-    elems.forEach(elem => {
-        if (elem) {
-            elem.classList.toggle("animation-paused");
-        }
-    });
-}
+const animationContainer = document.getElementById("animation-container");
 
-function exitAnimation() {
-    //inserire quello che si vuole
-}
+const giftUnwrapping = new GiftUnwrapping();
+giftUnwrapping.initialize("gucci", "Happy Birthday, Emma.<br><br>I wish you the best.<br><br>Love, Dean", "Enjoy your gift!", animationContainer);
+giftUnwrapping.start();
 
-function restartAnimation() {
-    reset();
-    setTimeout(() => {
-        start()
-    }, 500);
-}
 
-function reset() {
-    elems.forEach(elem => {
-        if (elem)
-            elem.classList.remove("animate");
-    });    
-}
-  
+
+
+
+
+
+/*
 function explode() {
 
     const explosion = document.getElementById("explosion");
@@ -98,7 +207,8 @@ function explode() {
     }
   }
   
-  // get random number between min and max value
-  function rand(min, max) {
-    return Math.floor(Math.random() * (max + 1)) + min;
-  }
+// get random number between min and max value
+function rand(min, max) {
+return Math.floor(Math.random() * (max + 1)) + min;
+}
+*/
