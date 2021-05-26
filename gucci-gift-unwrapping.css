@@ -96,14 +96,6 @@ button img {
     height: 500px;
     z-index: 15;
 }
-#elem-gift-box-letter {
-    content: url("gucci/desktop/LETTER\ BOX@2x.png");
-    background-size: contain;
-}
-#elem-gift-box-letter.animate {
-    animation: gift-box-disappear 1s forwards;
-    animation-delay: 5s;
-}
 #elem-gift-box-tissue-paper {
     background: url("gucci/desktop/box-tissue.png");
     background-size: contain;

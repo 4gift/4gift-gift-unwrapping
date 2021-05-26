@@ -140,7 +140,6 @@ class GiftUnwrapping {
             document.getElementById("elem-gift-box-empty"),
             document.getElementById("elem-gift-box-empty-title"),
             document.getElementById("elem-gift-box-empty-img"),
-            document.getElementById("elem-gift-box-letter"),
             document.getElementById("elem-gift-box-tissue-paper"),
             document.getElementById("elem-gift-box-dust-bag"),
             document.getElementById("elem-gift-box-cover"),
