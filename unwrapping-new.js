@@ -35,7 +35,11 @@ class GiftUnwrapping {
     }
 
     initialize(brandName, message, enjoyTheGiftString, containerDiv) {
+        this.preLoad(brandName);
+        this.buildAnimation(brandName, message, enjoyTheGiftString, containerDiv);        
+    }
 
+    buildAnimation(brandName, message, enjoyTheGiftString, containerDiv) {
         this.containerDiv = containerDiv;
 
         const head  = document.getElementsByTagName("head")[0];
@@ -44,6 +48,12 @@ class GiftUnwrapping {
         cssLink.type = "text/css";
         cssLink.href = brandName + "-gift-unwrapping.css";
         head.appendChild(cssLink);
+
+        //loader
+        const loader = document.createElement("img");
+        loader.id = "loader";
+        loader.src = "loader.svg";
+        containerDiv.appendChild(loader);
 
         //restart button
         const restartButton = document.createElement("button");
@@ -134,6 +144,7 @@ class GiftUnwrapping {
         animationContainer.appendChild(elemGiftBoxTissuePaper);
 
         this.elems = [
+            document.getElementById("loader"),
             document.getElementById("restart-button"),
             document.getElementById("pause-button"),
             document.getElementById("elem-intro-text"),
@@ -162,19 +173,15 @@ class GiftUnwrapping {
             if (elem)
                 elem.style.visibility = 'hidden'
         });
-        
     }
 
-    start() {
-        window.addEventListener('load', (event) => {    
-            
-            this.elems.forEach(elem => {
-                if (elem)
-                    elem.style.visibility = 'visible'
-            });
-        
-            this.startAnimation();
+    start() {            
+        this.elems.forEach(elem => {
+            if (elem)
+                elem.style.visibility = 'visible'
         });
+    
+        this.startAnimation();
     }
 
     toggleAnimation() {
@@ -216,9 +223,8 @@ class GiftUnwrapping {
 const animationContainer = document.getElementById("animation-container");
 
 const giftUnwrapping = new GiftUnwrapping();
-giftUnwrapping.preLoad("gucci");
 giftUnwrapping.initialize("gucci", "Happy Birthday, Emma.<br><br>I wish you the best.<br><br>Love, Dean", "Enjoy your gift!", animationContainer);
-giftUnwrapping.start();
+setTimeout(() => giftUnwrapping.start(), 3000);
 
 
 
