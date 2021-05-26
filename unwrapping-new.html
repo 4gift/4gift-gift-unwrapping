@@ -10,6 +10,16 @@
     <div id="animation-container"></div>
     <img id="loader" src="spinner.gif">
     <script type="text/javascript" src="unwrapping-new.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+        const animationContainer = document.getElementById("animation-container");
+        const giftUnwrapping = new GiftUnwrapping();
+
+        giftUnwrapping.preLoad("gucci");
+        giftUnwrapping.initialize("gucci", <%= messages %>, <%= enjoy %> , animationContainer);
+        giftUnwrapping.start();
+      });
+    </script>
 </body>
 </html>
 

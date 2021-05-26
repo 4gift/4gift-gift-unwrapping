@@ -214,19 +214,6 @@ class GiftUnwrapping {
     }
 }
 
-const animationContainer = document.getElementById("animation-container");
-
-const giftUnwrapping = new GiftUnwrapping();
-giftUnwrapping.preLoad("gucci");
-giftUnwrapping.initialize("gucci", "Happy Birthday, Emma.<br><br>I wish you the best.<br><br>Love, Dean", "Enjoy your gift!", animationContainer);
-giftUnwrapping.start();
-
-
-
-
-
-
-
 /*
 function explode() {
 
