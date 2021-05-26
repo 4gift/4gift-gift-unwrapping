@@ -1,9 +1,49 @@
 class GiftUnwrapping {
 
+    containerDiv;
     elems;
     pauseButton;
+    imagesName = [
+        "desktop/background-pattern@2x.jpg",
+        "desktop/box-dustbag.png",
+        "desktop/box-empty.png",
+        "desktop/box-tissue.png",
+        "desktop/envelope-back.png",
+        "desktop/envelope-front.png",
+        "desktop/envelope-top-reverse.png",
+        "desktop/envelope-top.png",
+        "desktop/exit-icon@2x.png",
+        "desktop/gift@2x.png",
+        "desktop/letter-part-down-2@2x.png",
+        "desktop/letter-part-down-2@2x.png",
+        "desktop/letter-up-open@2x.png",
+        "desktop/letter.png",
+        "desktop/lid.png",
+        "desktop/pause-icon@2x.png",
+        "desktop/play-icon@2x.png",
+        "desktop/restart-icon@2x.png",
+        "mobile/dust-bag@2x.png",
+        "mobile/tissue-paper@2x.png"
+    ]
+    images;
+
+    preLoad(brandName) {
+        this.imagesName.forEach(imageName => {
+            const img = new Image();
+            img.src = brandName + '/' + imageName;
+        })
+    }
 
     initialize(brandName, message, enjoyTheGiftString, containerDiv) {
+
+        this.containerDiv = containerDiv;
+
+        const head  = document.getElementsByTagName("head")[0];
+        const cssLink  = document.createElement("link");
+        cssLink.rel  = "stylesheet";
+        cssLink.type = "text/css";
+        cssLink.href = brandName + "-gift-unwrapping.css";
+        head.appendChild(cssLink);
 
         //restart button
         const restartButton = document.createElement("button");
@@ -127,7 +167,8 @@ class GiftUnwrapping {
     }
 
     start() {
-        window.addEventListener('load', (event) => {        
+        window.addEventListener('load', (event) => {    
+            
             this.elems.forEach(elem => {
                 if (elem)
                     elem.style.visibility = 'visible'
@@ -176,6 +217,7 @@ class GiftUnwrapping {
 const animationContainer = document.getElementById("animation-container");
 
 const giftUnwrapping = new GiftUnwrapping();
+giftUnwrapping.preLoad("gucci");
 giftUnwrapping.initialize("gucci", "Happy Birthday, Emma.<br><br>I wish you the best.<br><br>Love, Dean", "Enjoy your gift!", animationContainer);
 giftUnwrapping.start();
 
