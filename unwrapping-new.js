@@ -1,5 +1,4 @@
 class GiftUnwrapping {
-
     containerDiv;
     elems;
     pauseButton;
@@ -99,13 +98,13 @@ class GiftUnwrapping {
         elemGiftBoxEmptyImg.src = brandName + "/desktop/gift@2x.png";
         elemGiftBoxEmpty.appendChild(elemGiftBoxEmptyTitle);
         elemGiftBoxEmpty.appendChild(elemGiftBoxEmptyImg);
-        animationContainer.appendChild(elemGiftBoxEmpty);
+        this.containerDiv.appendChild(elemGiftBoxEmpty);
     
         //gift box dust bag
         const elemGiftBoxDustBag = document.createElement("div");
         elemGiftBoxDustBag.id = "elem-gift-box-dust-bag";
         elemGiftBoxDustBag.classList.add("elem-gift-boxes");
-        animationContainer.appendChild(elemGiftBoxDustBag);
+        this.containerDiv.appendChild(elemGiftBoxDustBag);
     
         //gift box tissue paper
         const elemGiftBoxTissuePaper = document.createElement("div");
@@ -141,7 +140,7 @@ class GiftUnwrapping {
         elemEnvelope.appendChild(elemEnvelopeTop1);    
     
         elemGiftBoxTissuePaper.appendChild(elemEnvelope);
-        animationContainer.appendChild(elemGiftBoxTissuePaper);
+        this.containerDiv.appendChild(elemGiftBoxTissuePaper);
 
         this.elems = [
             document.getElementById("loader"),
@@ -220,11 +219,7 @@ class GiftUnwrapping {
     }
 }
 
-const animationContainer = document.getElementById("animation-container");
 
-const giftUnwrapping = new GiftUnwrapping();
-giftUnwrapping.initialize("gucci", "Happy Birthday, Emma.<br><br>I wish you the best.<br><br>Love, Dean", "Enjoy your gift!", animationContainer);
-setTimeout(() => giftUnwrapping.start(), 3000);
 
 
 

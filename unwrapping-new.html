@@ -9,6 +9,14 @@
 <body>
     <div id="animation-container"></div>
     <script type="text/javascript" src="unwrapping-new.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+        const animationContainer = document.getElementById("animation-container");
+        const giftUnwrapping = new GiftUnwrapping();
+        giftUnwrapping.initialize("gucci", "Happy Birthday, Emma.<br><br>I wish you the best.<br><br>Love, Dean", "Enjoy your gift!", animationContainer);
+        setTimeout(() => giftUnwrapping.start(), 3000);
+      });
+    </script>
 </body>
 </html>
 
