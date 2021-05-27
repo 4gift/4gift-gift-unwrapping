@@ -25,7 +25,6 @@ html, body {
 #animation-container {
     position: relative;
     height: 90vh;
-    width: 100vw;
     overflow: hidden !important;
     background: url("assets/gucci/desktop/background-pattern@2x.jpg");
     box-shadow: -10px 0px 10px 1px #aaaaaa;
