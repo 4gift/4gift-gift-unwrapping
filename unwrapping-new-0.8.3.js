@@ -52,7 +52,7 @@ class GiftUnwrapping {
         var sourceBrandizedAssetPath = sourceAssetPath + brandName;
         var sourceBrandizedPath = sourcePath + brandName;
 
-        if (giftUrl === "") {
+        if (!giftUrl) {
             giftUrl = sourceBrandizedAssetPath +  "/desktop/gift@2x.png"
         }
 
@@ -60,7 +60,7 @@ class GiftUnwrapping {
         const cssLink  = document.createElement("link");
         cssLink.rel  = "stylesheet";
         cssLink.type = "text/css";
-        cssLink.href = sourceBrandizedPath + "-gift-unwrapping-0.8.1.css";
+        cssLink.href = sourceBrandizedPath + "-gift-unwrapping-0.8.2.css";
         head.appendChild(cssLink);
 
         //loader
