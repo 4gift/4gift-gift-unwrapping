@@ -16,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <style>
         @media print, screen and (min-width: 40em) {
-            #testingOnly{
+            #openGiftUnwrapping{
 
                 top: 50% !important;
                 transform: translateY(-50%);
@@ -29,7 +29,7 @@
     <script type="text/javascript" src="unwrapping-new.js"></script>
     <script type="text/javascript">
         var giftUnwrapping = giftUnwrapping || {};
-        var testingOnly = testingOnly || {};
+        var openGiftUnwrapping = openGiftUnwrapping || {};
         $(document).foundation();
 
         window.addEventListener('DOMContentLoaded', (event) => {
@@ -40,7 +40,10 @@
             giftUnwrapping.initialize("gucci", "Happy Birthday, Emma.<br><br>I wish you the best.<br><br>Love, Dean", "Enjoy your gift!", animationContainer, closeButtonModal);
       });
     </script>
-    <div class="reveal large" id="testingOnly" data-reveal>
+    <!--
+
+    -->
+    <div class="reveal large" id="openGiftUnwrapping" data-reveal>
         <div id="animation-container" data-reveal></div>
         <button class="close-button" data-close aria-label="Close modal" type="button">
             <span aria-hidden="true">&times;</span>
@@ -49,12 +52,12 @@
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <button class="button-unwrapping" data-open="testingOnly">Content Here</button>
+    <button class="button-unwrapping" data-open="openGiftUnwrapping">Open GiftUnwrapping</button>
 
     <script>
 
       $('.button-unwrapping').click(function(){
-        testingOnly = new Foundation.Reveal($('#testingOnly'));
+        openGiftUnwrapping = new Foundation.Reveal($('#openGiftUnwrapping'));
         setTimeout(() => giftUnwrapping.start(), 3000);
       });
     </script>
