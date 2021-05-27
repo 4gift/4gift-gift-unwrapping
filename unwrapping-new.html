@@ -7,46 +7,55 @@
     <title>4Gift Unwrapping</title
             <!-- Compressed CSS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
 
     <!-- Compressed JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-float.min.css" integrity="sha256-4ldVyEvC86/kae2IBWw+eJrTiwNEbUUTmN0zkP4luL4=" crossorigin="anonymous">
     <!-- foundation-prototype.min.css: Compressed CSS with prototyping classes -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-prototype.min.css" integrity="sha256-BiKflOunI0SIxlTOOUCQ0HgwXrRrRwBkIYppEllPIok=" crossorigin="anonymous">
     <!-- foundation-rtl.min.css: Compressed CSS with right-to-left reading direction -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-rtl.min.css" integrity="sha256-F+9Ns8Z/1ZISonBbojH743hsmF3x3AlQdJEeD8DhQsE=" crossorigin="anonymous">
-</head>
-<body>
-    <script type="text/javascript" src="assets/js/unwrapping-new.js"></script>
-    <script type="text/javascript">
-        window.giftUnwrapping = new GiftUnwrapping();
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <style>
+        @media print, screen and (min-width: 40em) {
+            #testingOnly{
 
-        window.addEventListener('load', (event) => {
+                top: 50% !important;
+                transform: translateY(-50%);
+            }
+        }
+    </style>
+
+</head>
+<body style="margin: auto 0px">
+    <script type="text/javascript" src="unwrapping-new.js"></script>
+    <script type="text/javascript">
+        var giftUnwrapping = giftUnwrapping || {};
+        var testingOnly = testingOnly || {};
+        $(document).foundation();
+
+        window.addEventListener('DOMContentLoaded', (event) => {
             var animationContainer = document.getElementById("animation-container");
             var closeButtonModal = document.getElementById("close-button-modal");
-            window.giftUnwrapping.preLoad("gucci");
-            debugger
-            window.giftUnwrapping.initialize("gucci", "Message", "Enjoy your gift" , animationContainer, closeButtonModal);
-        });
+
+            giftUnwrapping = new GiftUnwrapping();
+            giftUnwrapping.initialize("gucci", "Happy Birthday, Emma.<br><br>I wish you the best.<br><br>Love, Dean", "Enjoy your gift!", animationContainer, closeButtonModal);
+      });
     </script>
-
-    <div class="unwrapping-preview flex-container align-middle align-center letter-spacing-1">
-        <p><button class="button-unwrapping" data-open="gift-unwrapping-modal">gift unwrapping</p>
-    </div>
-
-    <div class="reveal" id="gift-unwrapping-modal" data-reveal>
-        <div id="animation-container"></div>
-        <img id="loader" src="spinner.gif">
-        <button id="close-button-modal" data-close aria-label="Close modal" type="button">
+    <div class="reveal large" id="testingOnly" data-reveal>
+        <div id="animation-container" data-reveal></div>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <button class="close-button" id="close-button-modal" data-close aria-label="Close modal" type="button">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
+    <button class="button-unwrapping" data-open="testingOnly">Content Here</button>
 
     <script>
+
       $('.button-unwrapping').click(function(){
-        window.giftUnwrapping.start();
+        testingOnly = new Foundation.Reveal($('#testingOnly'));
+        setTimeout(() => giftUnwrapping.start(), 3000);
       });
     </script>
 </body>

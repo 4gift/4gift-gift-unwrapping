@@ -1,6 +1,4 @@
 class GiftUnwrapping {
-
-    closeButtonModal;
     containerDiv;
     elems;
     pauseButton;
@@ -31,48 +29,57 @@ class GiftUnwrapping {
     preLoad(brandName) {
         this.imagesName.forEach(imageName => {
             const img = new Image();
-            img.src = "assets/" + brandName + '/' + imageName;
+            img.src = 'assets/' + brandName + imageName;
         })
     }
 
-    initialize(brandName, message, enjoyTheGiftString, containerDiv, closeButtonModal) {
-        this.containerDiv = containerDiv;
-        this.closeButtonModal = closeButtonModal;
-        var completeUrl = "assets/" + brandName;
+    initialize(brandName, message, enjoyTheGiftString, containerDiv) {
+        this.preLoad(brandName);
+        this.buildAnimation(brandName, message, enjoyTheGiftString, containerDiv);
+    }
 
+    buildAnimation(brandName, message, enjoyTheGiftString, containerDiv) {
+        this.containerDiv = containerDiv;
+        var imagePath =  'assets/' + brandName;
         const head  = document.getElementsByTagName("head")[0];
         const cssLink  = document.createElement("link");
         cssLink.rel  = "stylesheet";
         cssLink.type = "text/css";
-        cssLink.href = completeUrl + "-gift-unwrapping.css";
+        cssLink.href = brandName + "-gift-unwrapping.css";
         head.appendChild(cssLink);
+
+        //loader
+        const loader = document.createElement("img");
+        loader.id = "loader";
+        loader.src = "loader.svg";
+        containerDiv.appendChild(loader);
 
         //restart button
         const restartButton = document.createElement("button");
         restartButton.id = "restart-button";
         restartButton.onclick = () => this.restartAnimation();
         const restartButtonImg = document.createElement("img");
-        restartButtonImg.src = completeUrl + "/desktop/restart-icon@2x.png";
+        restartButtonImg.src = imagePath + "/desktop/restart-icon@2x.png";
         restartButton.appendChild(restartButtonImg);
         containerDiv.appendChild(restartButton);
-        debugger
+
         //pause button
         const pauseButton = document.createElement("button");
         pauseButton.id = "pause-button";
         pauseButton.onclick = () => this.toggleAnimation();
         const pauseButtonImg = document.createElement("img");
-        pauseButtonImg.src = completeUrl + "/desktop/pause-icon@2x.png";
+        pauseButtonImg.src = imagePath + "/desktop/pause-icon@2x.png";
         pauseButton.appendChild(pauseButtonImg);
         containerDiv.appendChild(pauseButton);
 
         //exit button
-        const exitButton = document.createElement("button");
-        exitButton.id = "exit-button";
-        exitButton.onclick = () => this.exitAnimation();
-        const exitButtonImg = document.createElement("img");
-        exitButtonImg.src = completeUrl + "/desktop/exit-icon@2x.png";
-        exitButton.appendChild(exitButtonImg);
-        containerDiv.appendChild(exitButton);
+//        const exitButton = document.createElement("button");
+//        exitButton.id = "exit-button";
+//        exitButton.onclick = () => this.exitAnimation();
+//        const exitButtonImg = document.createElement("img");
+//        exitButtonImg.src = imagePath + "/desktop/exit-icon@2x.png";
+//        exitButton.appendChild(exitButtonImg);
+//        containerDiv.appendChild(exitButton);
 
         //gift box cover
         const elemGiftBoxCover = document.createElement("div");
@@ -88,16 +95,16 @@ class GiftUnwrapping {
         elemGiftBoxEmptyTitle.textContent = enjoyTheGiftString;
         const elemGiftBoxEmptyImg = document.createElement("img");
         elemGiftBoxEmptyImg.id = "elem-gift-box-empty-img";
-        elemGiftBoxEmptyImg.src = completeUrl + "/desktop/gift@2x.png";
+        elemGiftBoxEmptyImg.src = imagePath + "/desktop/gift@2x.png";
         elemGiftBoxEmpty.appendChild(elemGiftBoxEmptyTitle);
         elemGiftBoxEmpty.appendChild(elemGiftBoxEmptyImg);
-        containerDiv.appendChild(elemGiftBoxEmpty);
+        this.containerDiv.appendChild(elemGiftBoxEmpty);
 
         //gift box dust bag
         const elemGiftBoxDustBag = document.createElement("div");
         elemGiftBoxDustBag.id = "elem-gift-box-dust-bag";
         elemGiftBoxDustBag.classList.add("elem-gift-boxes");
-        containerDiv.appendChild(elemGiftBoxDustBag);
+        this.containerDiv.appendChild(elemGiftBoxDustBag);
 
         //gift box tissue paper
         const elemGiftBoxTissuePaper = document.createElement("div");
@@ -109,12 +116,12 @@ class GiftUnwrapping {
         //envelope front
         const elemEnvelopeFront = document.createElement("img");
         elemEnvelopeFront.id = "elem-envelope-front";
-        elemEnvelopeFront.src = completeUrl + "/desktop/envelope-front.png";
+        elemEnvelopeFront.src = imagePath + "/desktop/envelope-front.png";
         elemEnvelope.appendChild(elemEnvelopeFront);
         //envelope back
         const elemEnvelopeBack = document.createElement("img");
         elemEnvelopeBack.id = "elem-envelope-back";
-        elemEnvelopeBack.src = completeUrl + "/desktop/envelope-back.png";
+        elemEnvelopeBack.src = imagePath + "/desktop/envelope-back.png";
         elemEnvelope.appendChild(elemEnvelopeBack);
         //elem letter
         const elemLetter = document.createElement("div");
@@ -133,16 +140,16 @@ class GiftUnwrapping {
         elemEnvelope.appendChild(elemEnvelopeTop1);
 
         elemGiftBoxTissuePaper.appendChild(elemEnvelope);
-        containerDiv.appendChild(elemGiftBoxTissuePaper);
+        this.containerDiv.appendChild(elemGiftBoxTissuePaper);
 
         this.elems = [
+            document.getElementById("loader"),
             document.getElementById("restart-button"),
             document.getElementById("pause-button"),
             document.getElementById("elem-intro-text"),
             document.getElementById("elem-gift-box-empty"),
             document.getElementById("elem-gift-box-empty-title"),
             document.getElementById("elem-gift-box-empty-img"),
-            document.getElementById("elem-gift-box-letter"),
             document.getElementById("elem-gift-box-tissue-paper"),
             document.getElementById("elem-gift-box-dust-bag"),
             document.getElementById("elem-gift-box-cover"),
@@ -165,9 +172,6 @@ class GiftUnwrapping {
             if (elem)
                 elem.style.visibility = 'hidden'
         });
-        debugger
-
-        // this.closeButtonModal.click();
     }
 
     start() {
@@ -189,8 +193,7 @@ class GiftUnwrapping {
     }
 
     exitAnimation() {
-        this.containerDiv.style.display = 'none'
-        // inserire quello che si vuole
+        //inserire quello che si vuole
     }
 
     restartAnimation() {
@@ -215,3 +218,39 @@ class GiftUnwrapping {
         });
     }
 }
+
+
+
+
+
+
+
+
+
+/*
+function explode() {
+
+    const explosion = document.getElementById("explosion");
+
+    var particles = 1000;
+
+    for (var i = 0; i < particles; i++) {
+        let x = 0, //(explosion.style.width / 2) + rand(80, 150) * Math.cos(2 * Math.PI * i / rand(particles - 10, particles + 10));
+        y = 0, //(explosion.style.height / 2) + rand(80, 150) * Math.sin(2 * Math.PI * i / rand(particles - 10, particles + 10)),
+        color = 'red' ;
+        particle = document.createElement('div');
+
+        particle.classList.add("particle");
+        particle.style.backgroundColor = rand(0, 2) == 0 ? '#72733A' : 'white';
+        particle.style.top = rand(0, 300) + 'px';
+        particle.style.left = rand(0, 600) + 'px';
+
+        explosion.append(particle);
+    }
+  }
+
+// get random number between min and max value
+function rand(min, max) {
+return Math.floor(Math.random() * (max + 1)) + min;
+}
+*/
