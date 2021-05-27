@@ -1,4 +1,5 @@
 class GiftUnwrapping {
+
     containerDiv;
     elems;
     pauseButton;
@@ -62,7 +63,7 @@ class GiftUnwrapping {
         restartButtonImg.src = imagePath + "/desktop/restart-icon@2x.png";
         restartButton.appendChild(restartButtonImg);
         containerDiv.appendChild(restartButton);
-
+    
         //pause button
         const pauseButton = document.createElement("button");
         pauseButton.id = "pause-button";
@@ -71,7 +72,7 @@ class GiftUnwrapping {
         pauseButtonImg.src = imagePath + "/desktop/pause-icon@2x.png";
         pauseButton.appendChild(pauseButtonImg);
         containerDiv.appendChild(pauseButton);
-
+    
         //exit button
 //        const exitButton = document.createElement("button");
 //        exitButton.id = "exit-button";
@@ -172,6 +173,7 @@ class GiftUnwrapping {
             if (elem)
                 elem.style.visibility = 'hidden'
         });
+        
     }
 
     start() {
@@ -203,29 +205,21 @@ class GiftUnwrapping {
         }, 500);
     }
 
-    startAnimation() {
+    startAnimation() {    
         this.elems.forEach(elem => {
             if (elem) {
                 elem.classList.add("animate");
             }
         });
     }
-
+    
     resetAnimation() {
         this.elems.forEach(elem => {
             if (elem)
                 elem.classList.remove("animate");
-        });
+        });    
     }
 }
-
-
-
-
-
-
-
-
 
 /*
 function explode() {
@@ -233,22 +227,22 @@ function explode() {
     const explosion = document.getElementById("explosion");
 
     var particles = 1000;
-
+  
     for (var i = 0; i < particles; i++) {
         let x = 0, //(explosion.style.width / 2) + rand(80, 150) * Math.cos(2 * Math.PI * i / rand(particles - 10, particles + 10));
         y = 0, //(explosion.style.height / 2) + rand(80, 150) * Math.sin(2 * Math.PI * i / rand(particles - 10, particles + 10)),
         color = 'red' ;
         particle = document.createElement('div');
 
-        particle.classList.add("particle");
+        particle.classList.add("particle"); 
         particle.style.backgroundColor = rand(0, 2) == 0 ? '#72733A' : 'white';
         particle.style.top = rand(0, 300) + 'px';
         particle.style.left = rand(0, 600) + 'px';
-
+  
         explosion.append(particle);
     }
   }
-
+  
 // get random number between min and max value
 function rand(min, max) {
 return Math.floor(Math.random() * (max + 1)) + min;
