@@ -53,7 +53,7 @@ class GiftUnwrapping {
         var sourceBrandizedPath = sourcePath + brandName;
 
         if (giftUrl === "") {
-            giftUrl = sourceBrandizedPath +  "/desktop/gift@2x.png"
+            giftUrl = sourceBrandizedAssetPath +  "/desktop/gift@2x.png"
         }
 
         const head  = document.getElementsByTagName("head")[0];
