@@ -134,6 +134,7 @@ class GiftUnwrapping {
         //envelope top 2
         const elemEnvelopeTop2 = document.createElement("img");
         elemEnvelopeTop2.id = "elem-envelope-top-2";
+        elemEnvelopeTop2.src = imagePath + "/desktop/envelope-top.png";
         elemEnvelope.appendChild(elemEnvelopeTop2);
         //envelope top 1
         const elemEnvelopeTop1 = document.createElement("img");
