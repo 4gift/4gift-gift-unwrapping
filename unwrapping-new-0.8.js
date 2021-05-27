@@ -50,7 +50,7 @@ class GiftUnwrapping {
         var sourcePath =  'https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/';
         var sourceAssetPath = sourcePath + 'assets/';
         var sourceBrandizedAssetPath = sourceAssetPath + brandName;
-        var sourceBrandizedPath = sourceAssetPath + brandName;
+        var sourceBrandizedPath = sourcePath + brandName;
 
         if (giftUrl === "") {
             gift = sourceBrandizedPath +  "/desktop/gift@2x.png"
