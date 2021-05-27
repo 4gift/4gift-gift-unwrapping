@@ -1,23 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4Gift Unwrapping</title>
+    <title>4Gift Unwrapping</title
+            <!-- Compressed CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+
+    <!-- Compressed JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-float.min.css" integrity="sha256-4ldVyEvC86/kae2IBWw+eJrTiwNEbUUTmN0zkP4luL4=" crossorigin="anonymous">
+    <!-- foundation-prototype.min.css: Compressed CSS with prototyping classes -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-prototype.min.css" integrity="sha256-BiKflOunI0SIxlTOOUCQ0HgwXrRrRwBkIYppEllPIok=" crossorigin="anonymous">
+    <!-- foundation-rtl.min.css: Compressed CSS with right-to-left reading direction -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-rtl.min.css" integrity="sha256-F+9Ns8Z/1ZISonBbojH743hsmF3x3AlQdJEeD8DhQsE=" crossorigin="anonymous">
 </head>
 <body>
-    <div id="animation-container"></div>
-    <img id="loader" src="spinner.gif">
-    <script type="text/javascript" src="unwrapping-new.js"></script>
-    <script>
-      window.addEventListener('DOMContentLoaded', (event) => {
-        const animationContainer = document.getElementById("animation-container");
-        const giftUnwrapping = new GiftUnwrapping();
+    <script type="text/javascript" src="assets/js/unwrapping-new.js"></script>
+    <script type="text/javascript">
+        window.giftUnwrapping = new GiftUnwrapping();
 
-        giftUnwrapping.preLoad("gucci");
-        giftUnwrapping.initialize("gucci", <%= messages %>, <%= enjoy %> , animationContainer);
-        giftUnwrapping.start();
+        window.addEventListener('load', (event) => {
+            var animationContainer = document.getElementById("animation-container");
+            var closeButtonModal = document.getElementById("close-button-modal");
+            window.giftUnwrapping.preLoad("gucci");
+            debugger
+            window.giftUnwrapping.initialize("gucci", "Message", "Enjoy your gift" , animationContainer, closeButtonModal);
+        });
+    </script>
+
+    <div class="unwrapping-preview flex-container align-middle align-center letter-spacing-1">
+        <p><button class="button-unwrapping" data-open="gift-unwrapping-modal">gift unwrapping</p>
+    </div>
+
+    <div class="reveal" id="gift-unwrapping-modal" data-reveal>
+        <div id="animation-container"></div>
+        <img id="loader" src="spinner.gif">
+        <button id="close-button-modal" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <script>
+      $('.button-unwrapping').click(function(){
+        window.giftUnwrapping.start();
       });
     </script>
 </body>

@@ -12,7 +12,7 @@
 
 @font-face {
     font-family: futurastd;
-    src: url('gucci/FuturaStd-Book.otf');
+    src: url('../gucci/FuturaStd-Book.otf');
   }
 
 html, body {
@@ -27,7 +27,7 @@ html, body {
     height: 100vh;
     width: 100vw;
     overflow: hidden !important;
-    background: url("gucci/desktop/background-pattern@2x.jpg");
+    background: url("../gucci/desktop/background-pattern@2x.jpg");
     box-shadow: -10px 0px 10px 1px #aaaaaa;
 }
 
@@ -56,7 +56,7 @@ html, body {
     cursor: pointer;
 }
 #pause-button.pressed img {
-    content: url("gucci/desktop/play-icon@2x.png");
+    content: url("../gucci/desktop/play-icon@2x.png");
 }
 #pause-button.animate {
     animation: disappear 1s forwards;
@@ -97,7 +97,7 @@ button img {
     z-index: 15;
 }
 #elem-gift-box-letter {
-    content: url("gucci/desktop/LETTER\ BOX@2x.png");
+    content: url("assets/gucci/desktop/LETTER\ BOX@2x.png");
     background-size: contain;
 }
 #elem-gift-box-letter.animate {
@@ -105,7 +105,7 @@ button img {
     animation-delay: 5s;
 }
 #elem-gift-box-tissue-paper {
-    background: url("gucci/desktop/box-tissue.png");
+    background: url("../gucci/desktop/box-tissue.png");
     background-size: contain;
 }
 #elem-gift-box-tissue-paper.animate  {
@@ -113,7 +113,7 @@ button img {
     animation-delay: 15s;
 }
 #elem-gift-box-dust-bag {
-    background: url("gucci/desktop/box-dustbag.png");
+    background: url("../gucci/desktop/box-dustbag.png");
     background-size: contain;
 }
 #elem-gift-box-dust-bag.animate {
@@ -121,7 +121,7 @@ button img {
     animation-delay: 20s;
 }
 #elem-gift-box-empty {
-    background: url("gucci/desktop/box-empty.png");
+    background: url("../gucci/desktop/box-empty.png");
     background-size: contain;
 }
 #elem-gift-box-empty-img {
@@ -148,7 +148,7 @@ button img {
 }
 
 #elem-envelope-closed {
-    content: url("gucci/desktop/envelope-close.png");
+    content: url("assets/gucci/desktop/envelope-close.png");
     position: absolute;
     top: 45%;
     right: 0;
@@ -159,7 +159,7 @@ button img {
 }
 
 #elem-gift-box-cover {
-    content: url("gucci/desktop/lid.png");
+    content: url("../gucci/desktop/lid.png");
     position: absolute;
     top: 20%;
     right: 0;
@@ -175,7 +175,7 @@ button img {
 }
 
 #elem-tissue-paper {
-    content: url("gucci/desktop/tissue-paper@2x.png");
+    content: url("assets/gucci/desktop/tissue-paper@2x.png");
     position: absolute;
     width: 100%;
     height: 100%;
@@ -218,7 +218,7 @@ button img {
     z-index: 13;
 }
 #elem-letter {
-    background-image: url("gucci/desktop/letter.png");
+    background-image: url("../gucci/desktop/letter.png");
     background-size: 100% 100%;
     position: absolute;
     left: 0;
@@ -238,7 +238,7 @@ button img {
 }
 
 #elem-envelope-top-1 {
-    content: url("gucci/desktop/envelope-top.png");
+    content: url("../gucci/desktop/envelope-top.png");
     position: absolute;
     left: 0;
     right: 0;
@@ -251,7 +251,7 @@ button img {
     animation-delay: 6s;
 }
 #elem-envelope-top-2 {
-    content: url("gucci/desktop/envelope-top-reverse.png");
+    content: url("../gucci/desktop/envelope-top-reverse.png");
     position: absolute;
     left: 0;
     right: 0;
@@ -265,7 +265,7 @@ button img {
 }
 
 #elem-dust-bag {
-    content: url("gucci/desktop/DUST_BAG@2x.png");
+    content: url("assets/gucci/desktop/DUST_BAG@2x.png");
     position: absolute;
     width: 100%;
     height: 100%;
@@ -342,10 +342,10 @@ button img {
     }
 
     #elem-tissue-paper {
-        content: url("gucci/mobile/tissue-paper@2x.png") !important;
+        content: url("../gucci/mobile/tissue-paper@2x.png") !important;
     }
     #elem-dust-bag {
-        content: url("gucci/mobile/dust-bag@2x.png") !important;
+        content: url("../gucci/mobile/dust-bag@2x.png") !important;
     }
 
     #elem-envelope-front, #elem-envelope-back, #elem-envelope-top-1, #elem-envelope-top-2, #elem-letter {
@@ -498,4 +498,16 @@ button img {
   to {
     opacity: 0;
   }
+}
+
+.reveal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1005;
+    display: none;
+    background-color: rgba(10, 10, 10, 0.45);
+    overflow-y: auto;
 }
