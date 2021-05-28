@@ -9,19 +9,6 @@
     --restart-button-appearing-time: 25s;
   }
 
-
-@font-face {
-    font-family: futurastd;
-    src: url('assets/gucci/FuturaStd-Book.otf');
-  }
-
-html, body {
-    padding: 0;
-    margin: 0;
-    overflow: hidden !important;
-    font-family: futurastd !important;
-}
-
 #animation-container {
     position: relative;
     height: 90vh;
@@ -127,7 +114,7 @@ button img {
     animation-delay: 20s;
 }
 #elem-gift-box-empty {
-    background: url("ghttps://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/gucci/desktop/box-empty.png");
+    background: url("https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/gucci/desktop/box-empty.png");
     background-size: contain;
 }
 #elem-gift-box-empty-img {
