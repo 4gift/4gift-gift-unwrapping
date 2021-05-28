@@ -13,7 +13,6 @@ class GiftUnwrapping {
         "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/envelope-top-reverse.png",
         "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/envelope-top.png",
         "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/exit-icon@2x.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/gift@2x.png",
         "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/letter-part-down-2@2x.png",
         "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/letter-up-open@2x.png",
         "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/letter.png",
@@ -40,27 +39,27 @@ class GiftUnwrapping {
         })
     }
 
-    initialize(brandName, message, enjoyTheGiftString, containerDiv) {
+    initialize(brandName, message, enjoyTheGiftString, containerDiv, giftUrl) {
         this.preLoad(brandName);
-        this.buildAnimation(brandName, message, enjoyTheGiftString, containerDiv);
+        this.buildAnimation(brandName, message, enjoyTheGiftString, containerDiv, giftUrl);
     }
 
     buildAnimation(brandName, message, enjoyTheGiftString, containerDiv, giftUrl) {
         this.containerDiv = containerDiv;
-        var sourcePath =  'https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/';
+        var sourcePath = 'https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/';
         var sourceAssetPath = sourcePath + 'assets/';
         var sourceBrandizedAssetPath = sourceAssetPath + brandName;
         var sourceBrandizedPath = sourcePath + brandName;
 
         if (!giftUrl) {
-            giftUrl = sourceBrandizedAssetPath +  "/desktop/gift@2x.png"
+          giftUrl = sourceBrandizedAssetPath +  "/desktop/gift@2x.png"
         }
 
         const head  = document.getElementsByTagName("head")[0];
         const cssLink  = document.createElement("link");
         cssLink.rel  = "stylesheet";
         cssLink.type = "text/css";
-        cssLink.href = sourceBrandizedPath + "-gift-unwrapping-0.8.2.css";
+        cssLink.href = sourceBrandizedPath + "-gift-unwrapping-0.8.4.css";
         head.appendChild(cssLink);
 
         //loader
