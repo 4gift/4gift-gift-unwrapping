@@ -13,7 +13,6 @@ class GiftUnwrapping {
         "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/envelope-top-reverse.png",
         "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/envelope-top.png",
         "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/exit-icon@2x.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/gift@2x.png",
         "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/letter-part-down-2@2x.png",
         "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/letter-up-open@2x.png",
         "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/letter.png",
@@ -40,9 +39,9 @@ class GiftUnwrapping {
         })
     }
 
-    initialize(brandName, message, enjoyTheGiftString, containerDiv) {
+    initialize(brandName, message, enjoyTheGiftString, containerDiv, giftUrl) {
         this.preLoad(brandName);
-        this.buildAnimation(brandName, message, enjoyTheGiftString, containerDiv);
+        this.buildAnimation(brandName, message, enjoyTheGiftString, containerDiv, giftUrl);
     }
 
     buildAnimation(brandName, message, enjoyTheGiftString, containerDiv, giftUrl) {
@@ -53,7 +52,7 @@ class GiftUnwrapping {
         var sourceBrandizedPath = sourcePath + brandName;
 
         if (!giftUrl) {
-            giftUrl = sourceBrandizedAssetPath +  "/desktop/gift@2x.png"
+          giftUrl = sourceBrandizedAssetPath +  "/desktop/gift@2x.png"
         }
 
         const head  = document.getElementsByTagName("head")[0];
