@@ -1,5 +1,11 @@
-# gift-unwrapping
-the gift unwrapping of 4Gift service
+# Gift Unwrapping
+The Gift Unwrapping of 4Gift service
 
-## Foundation elements
-The Gift Unwrapping originally is mounted on a Foundation projects. It will be shown 
+## Foundation elements
+
+The preview of the GiftUnwrapping will appear in _reveal_ modal because 4Gift project run under the Foundation framework, we need to replicate perfectly the environment.
+
+## Versions
+
+At the moment, the system of versioning is very trivial.
+Whenever it is necessary add feature or bugfix, a new file with the new version should be created.
