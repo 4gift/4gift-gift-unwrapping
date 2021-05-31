@@ -74,7 +74,7 @@ class GiftUnwrapping {
         const cssLink  = document.createElement("link");
         cssLink.rel  = "stylesheet";
         cssLink.type = "text/css";
-        cssLink.href = sourceBrandizedPath + "-gift-unwrapping-0.8.4.css";
+        cssLink.href = sourceBrandizedPath + "-gift-unwrapping-0.8.5.css";
         //head.appendChild(cssLink);
 
         //loader
