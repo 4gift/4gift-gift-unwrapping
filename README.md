@@ -10,3 +10,6 @@ The preview of the GiftUnwrapping will appear in _reveal_ modal because 4Gift pr
 At the moment, the system of versioning is very trivial.
 Whenever it is necessary add feature or bugfix on both JS and CSS, a new file with the new version should be created.
 Do not forget: **when CSS version is updated, it should be updated in the JS as well**
+
+## Animation settings
+The GiftUnwrapping JS class is provided with a JSON parameter named `animationDurations` that allows to customize the timing of the different animations of each element. To do so, it is sufficient to replace the default numerical values with the desired ones.
