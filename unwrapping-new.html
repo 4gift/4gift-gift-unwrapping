@@ -26,7 +26,7 @@
 
 </head>
 <body style="margin: auto 0px">
-    <script type="text/javascript" src="unwrapping-new-0.8.10.js"></script>
+    <script type="text/javascript" src="unwrapping-new-0.8.11.js"></script>
     <script type="text/javascript">
         var giftUnwrapping = giftUnwrapping || {};
         var openGiftUnwrapping = openGiftUnwrapping || {};
@@ -36,7 +36,11 @@
             var animationContainer = document.getElementById("animation-container");
 
             giftUnwrapping = new GiftUnwrapping();
-            giftUnwrapping.initialize("gucci", ["Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor <br> incidunt ut labore et dolore magna aliqua", "Another message from John<br><br>I wish you the best"], "Enjoy your gift!", animationContainer);
+            giftUnwrapping.initialize(
+                "gucci",
+                ["Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor <br> incidunt ut labore et dolore magna aliqua", "Another message from John<br><br>I wish you the best"],
+                animationContainer
+            );
       });
     </script>
     <!--

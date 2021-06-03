@@ -36,7 +36,8 @@ class GiftUnwrapping {
         "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/play-icon@2x.png",
         "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/restart-icon@2x.png",
         "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/mobile/dust-bag@2x.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/mobile/tissue-paper@2x.png"
+        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/mobile/tissue-paper@2x.png",
+        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/powered_by_4gift_white.svg"
     ]
     images = [];
     loadedImages;
@@ -84,7 +85,7 @@ class GiftUnwrapping {
         const cssLink  = document.createElement("link");
         cssLink.rel  = "stylesheet";
         cssLink.type = "text/css";
-        cssLink.href = sourceBrandizedPath + "-gift-unwrapping-0.8.6.min.css";
+        cssLink.href = sourceBrandizedPath + "-gift-unwrapping-0.8.7.min.css";
         //head.appendChild(cssLink);
 
         //loader
@@ -127,7 +128,7 @@ class GiftUnwrapping {
 
         //powered by 4gifters logo
         const poweredBy4GiftersLogo = document.createElement("img");
-        poweredBy4GiftersLogo.src = "assets/powered-by-4gifters-logo.svg";
+        poweredBy4GiftersLogo.src = sourceAssetPath + "powered_by_4gift_white.svg";
         poweredBy4GiftersLogo.id = "powered-by-4Gifters-logo";
         containerDiv.appendChild(poweredBy4GiftersLogo);
 
