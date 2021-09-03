@@ -23,11 +23,19 @@
                 transform: translateY(-50%);
             }
         }
+
+        .container {
+            /* Center vertically and horizontally */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -25px 0 0 -25px;
+        }
     </style>
 
 </head>
 <body style="margin: auto 0px">
-<script type="text/javascript" src="unwrapping-new-0.8.17.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/unwrapping-new-0.8.19.js"></script>
 <script type="text/javascript">
         var giftUnwrapping = giftUnwrapping || {};
         var openGiftUnwrapping = openGiftUnwrapping || {};
@@ -36,7 +44,7 @@
             var animationContainer = document.getElementById("animation-container");
 
             giftUnwrapping = new GiftUnwrapping();
-            giftUnwrapping.initialize("gucci", ["Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor <br> incidunt ut labore et dolore magna aliqua", "Another message from John<br><br>I wish you the best"], animationContainer);
+            giftUnwrapping.initialize("brunello_cucinelli", ["Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor <br> incidunt ut labore et dolore magna aliqua", "Another message from John<br><br>I wish you the best"], animationContainer);
       });
     </script>
 <!--
@@ -48,7 +56,10 @@
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
-<button class="button-unwrapping" data-open="openGiftUnwrapping">Open GiftUnwrapping</button>
+
+<div class="container">
+    <button class="button-unwrapping" data-open="openGiftUnwrapping">Open GiftUnwrapping</button>
+</div>
 
 <script>
 
