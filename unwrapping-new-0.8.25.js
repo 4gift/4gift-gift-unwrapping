@@ -128,7 +128,7 @@ class GiftUnwrapping {
 
         //powered by 4gifters logo
         const poweredBy4GiftersLogo = document.createElement("img");
-        poweredBy4GiftersLogo.src = sourceAssetPath + "powered_by_4gift_white.svg";
+        poweredBy4GiftersLogo.src = sourceAssetPath + "powered_by_4gift_black.svg";
         poweredBy4GiftersLogo.id = "powered-by-4Gifters-logo";
         containerDiv.appendChild(poweredBy4GiftersLogo);
 
