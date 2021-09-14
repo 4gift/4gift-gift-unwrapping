@@ -134,7 +134,7 @@ button img {
 #elem-gift-box-cover {
     content: url("https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brunello_cucinelli/desktop/lid.png");
     position: absolute;
-    top: 0;
+    top: -5px;
     right: 0;
     left: 0;
     bottom: 0;
