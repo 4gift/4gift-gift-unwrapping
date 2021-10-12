@@ -1,36 +1,30 @@
-:root {
-    
-}
-
 @font-face {
     font-family: 'GTEestiProText-Light';
     src: url(assets/brunello_cucinelli/font.woff) format('woff')
 }
-body {
-    font-family: 'GTEestiProText-Light' !important;
-}
 
-#animation-container {
+#4gift-unwrapping-container {
     position: relative;
     height: 90vh;
     overflow: hidden !important;
     background: url("https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brunello_cucinelli/desktop/background-pattern-2.jpg");
+    font-family: 'GTEestiProText-Light'
 }
 
-#loader {
+#4gift-unwrapping-container #loader {
     position: absolute;
     left: 50%;
     top: 40%;
     transform: translate(-50%, -0%);
 }
 
-#powered-by-4Gifters-logo {
+#4gift-unwrapping-container #powered-by-4Gifters-logo {
     position: absolute;
     right: 10px;
     top: 10px;
 }
 
-#exit-button {
+#4gift-unwrapping-container #exit-button {
     background: none;
     border: none;
     position: absolute;
@@ -39,12 +33,12 @@ body {
     z-index: 50;
     cursor: pointer;
 }
-#exit-button img {
+#4gift-unwrapping-container #exit-button img {
     width: 22px;
     height: 22px;
 }
 
-#pause-button, #restart-button {
+#4gift-unwrapping-container #pause-button, #4gift-unwrapping-container #restart-button {
     background: none;
     border: none;
     position: absolute;
@@ -54,23 +48,19 @@ body {
     z-index: 50;
     cursor: pointer;
 }
-#pause-button.pressed img {
+#4gift-unwrapping-container #pause-button.pressed img {
     content: url("https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brunello_cucinelli/desktop/play-icon@2x.png");
 }
-#pause-button.animate {
+#4gift-unwrapping-container #pause-button.animate {
     animation: disappear 1s forwards;
     animation-delay: var(--restart-button-appearing-animation-delay);
 }
-#restart-button.animate {
+#4gift-unwrapping-container #restart-button.animate {
     animation: appear 1s forwards;
     animation-delay: var(--restart-button-appearing-animation-delay);
 }
-button img {
-    width: 30px;
-    height: 30px;
-}
 
-.elem-gift-boxes {
+#4gift-unwrapping-container .elem-gift-boxes {
     position: absolute;
     top: 0;
     right: 0;
@@ -81,28 +71,28 @@ button img {
     height: 500px;
     z-index: 15;
 }
-#elem-gift-box-tissue-paper {
+#4gift-unwrapping-container #elem-gift-box-tissue-paper {
     background: url("https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brunello_cucinelli/desktop/box-tissue-1.png");
     background-size: contain;
 }
-#elem-gift-box-tissue-paper.animate  {
+#4gift-unwrapping-container #elem-gift-box-tissue-paper.animate  {
     animation: gift-box-disappear var(--tissue-paper-disappear-animation-duration) forwards;
     animation-delay: var(--tissue-paper-disappear-animation-delay);
 }
-#elem-gift-box-dust-bag {
+#4gift-unwrapping-container #elem-gift-box-dust-bag {
     background: url("https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brunello_cucinelli/desktop/box-dustbag-1.png");
     background-size: contain;
 }
-#elem-gift-box-dust-bag.animate {
+#4gift-unwrapping-container #elem-gift-box-dust-bag.animate {
     animation: gift-box-disappear var(--dust-bag-disappear-animation-duration) forwards;
     animation-delay: var(--dust-bag-disappear-animation-delay);
 }
-#elem-gift-box-empty {
+#4gift-unwrapping-container #elem-gift-box-empty {
     background: url("https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brunello_cucinelli/desktop/box-empty-1.png");
     background-size: contain;
     transform-style: preserve-3d;
 }
-#elem-gift-box-empty-img {
+#4gift-unwrapping-container #elem-gift-box-empty-img {
     position: absolute;
     left: 0;
     right: 0;
@@ -111,11 +101,11 @@ button img {
     transform: translateY(-50%) translateZ(-100px);
     width: 65%;
 }
-#elem-gift-box-empty-img.animate {
+#4gift-unwrapping-container #elem-gift-box-empty-img.animate {
     animation: slide-down var(--gift-slide-down-animation-duration) forwards;
     animation-delay: var(--gift-slide-down-animation-delay);
 }
-#elem-gift-box-empty-title {
+#4gift-unwrapping-container #elem-gift-box-empty-title {
     position: absolute;
     top: 27%;
     left: 30%;
@@ -123,12 +113,12 @@ button img {
     opacity: 0;
     text-align: center;
 }
-#elem-gift-box-empty-title.animate {
+#4gift-unwrapping-container #elem-gift-box-empty-title.animate {
     animation: appear var(--final-text-appearing-animation-duration) forwards;
     animation-delay: var(--final-text-appearing-animation-delay);
 }
 
-#elem-envelope-closed {
+#4gift-unwrapping-container #elem-envelope-closed {
     content: url("https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brunello_cucinelli/desktop/envelope-close.png");
     position: absolute;
     top: 45%;
@@ -139,7 +129,7 @@ button img {
     z-index: 15;
 }
 
-#elem-gift-box-cover {
+#4gift-unwrapping-container #elem-gift-box-cover {
     content: url("https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brunello_cucinelli/desktop/lid.png");
     position: absolute;
     top: -5px;
@@ -151,12 +141,12 @@ button img {
     z-index: 20;
 
 }
-#elem-gift-box-cover.animate {
+#4gift-unwrapping-container #elem-gift-box-cover.animate {
     animation: gift-box-cover-slide-left var(--gift-box-slide-left-animation-duration) forwards;
     animation-delay: var(--gift-box-slide-left-animation-delay);
 }
 
-#elem-envelope {
+#4gift-unwrapping-container #elem-envelope {
     left: 0;
     position: absolute;
     transform: scale(0.3);
@@ -164,31 +154,31 @@ button img {
     top: 40%;
     z-index: 15;
 }
-#elem-envelope.animate {
-    animation: envelope-enlarge var(--envelope-enlarging-animation-duration) forwards, 
-                envelope-slide-left var(--envelope-slide-left-animation-duration) forwards;
-    animation-delay: var(--envelope-enlarging-animation-delay), 
-                    var(--envelope-slide-left-animation-delay);
+#4gift-unwrapping-container #elem-envelope.animate {
+    animation: envelope-enlarge var(--envelope-enlarging-animation-duration) forwards,
+    envelope-slide-left var(--envelope-slide-left-animation-duration) forwards;
+    animation-delay: var(--envelope-enlarging-animation-delay),
+    var(--envelope-slide-left-animation-delay);
 }
 
-#elem-envelope-front {
+#4gift-unwrapping-container #elem-envelope-front {
     position: absolute;
     left: 0;
     right: 0;
     margin: auto;
     z-index: 15;
 }
-#elem-envelope-front.opened {
+#4gift-unwrapping-container #elem-envelope-front.opened {
     z-index: 16;
 }
-#elem-envelope-back {
+#4gift-unwrapping-container #elem-envelope-back {
     position: absolute;
     left: 0;
     right: 0;
     margin: auto;
     z-index: 13;
 }
-#elem-letter {
+#4gift-unwrapping-container #elem-letter {
     background-image: url("https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brunello_cucinelli/desktop/letter.png");
     background-size: contain;
     background-position-x: center;
@@ -200,12 +190,12 @@ button img {
     min-height: 300px;
     z-index: 14;
 }
-#elem-letter.animate {
+#4gift-unwrapping-container #elem-letter.animate {
     animation: slide-up var(--letter-slide-up-animation-duration) forwards;
     animation-delay: var(--letter-slide-up-animation-delay);
 }
 
-#elem-letter p {
+#4gift-unwrapping-container #elem-letter p {
     position: absolute;
     left: 0;
     right: 0;
@@ -216,11 +206,11 @@ button img {
     opacity: 0;
     font-size: 24px;
 }
-#elem-letter p.animate {
+#4gift-unwrapping-container #elem-letter p.animate {
     animation: appear-disappear var(--message-showing-animation-duration) forwards;
 }
 
-#elem-envelope-top-1 {
+#4gift-unwrapping-container #elem-envelope-top-1 {
     content: url("https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brunello_cucinelli/desktop/envelope-top.png");
     position: absolute;
     left: 0;
@@ -229,11 +219,11 @@ button img {
     z-index: 15;
     transform-origin: top center;
 }
-#elem-envelope-top-1.animate {
+#4gift-unwrapping-container #elem-envelope-top-1.animate {
     animation: open-1 forwards var(--envelope-opening-animation-duration);
     animation-delay: var(--envelope-opening-animation-delay);
 }
-#elem-envelope-top-2 {
+#4gift-unwrapping-container #elem-envelope-top-2 {
     content: url("https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brunello_cucinelli/desktop/envelope-top-reverse.png");
     position: absolute;
     left: 0;
@@ -242,133 +232,131 @@ button img {
     z-index: 15;
     transform-origin: top center;
 }
-#elem-envelope-top-2.animate {
+#4gift-unwrapping-container #elem-envelope-top-2.animate {
     animation: open-2 forwards var(--envelope-opening-animation-duration);
     animation-delay: var(--envelope-opening-animation-delay);
 }
-#elem-envelope-front, #elem-envelope-back, #elem-envelope-top-1, #elem-envelope-top-2 {
+#4gift-unwrapping-container #elem-envelope-front, #4gift-unwrapping-container #elem-envelope-back, #4gift-unwrapping-container #elem-envelope-top-1, #4gift-unwrapping-container #elem-envelope-top-2 {
     width: 500px;
     top: 40%;
 }
-#elem-letter {
+#4gift-unwrapping-container #elem-letter {
     width: 490px;
 }
 
 /* DESKTOP height < 800px */
 @media only screen and (max-height: 800px) and (orientation: landscape) {
-    .elem-gift-boxes {
+    #4gift-unwrapping-container .elem-gift-boxes {
         width: 420px;
         height: 420px;
     }
-    #elem-gift-box-cover {
+    #4gift-unwrapping-container #elem-gift-box-cover {
         width: 420px;
         height: 420px;
     }
-    #elem-envelope-front, #elem-envelope-back, #elem-envelope-top-1, #elem-envelope-top-2 {
+    #4gift-unwrapping-container #elem-envelope-front, #4gift-unwrapping-container #elem-envelope-back, #4gift-unwrapping-container #elem-envelope-top-1, #4gift-unwrapping-container #elem-envelope-top-2 {
         width: 360px;
     }
-    #elem-letter {
+    #4gift-unwrapping-container #elem-letter {
         width: 350px;
         min-height: 250px;
     }
-    #elem-letter p {
+    #4gift-unwrapping-container #elem-letter p {
         font-size: 18px;
     }
 
-    #pause-button, #restart-button {
+    #4gift-unwrapping-container #pause-button, #4gift-unwrapping-container #restart-button {
         bottom: 30px;
     }
 }
 
 /* DESKTOP height < 600px */
 @media only screen and (max-height: 600px) and (orientation: landscape) {
-    .elem-gift-boxes {
+    #4gift-unwrapping-container .elem-gift-boxes {
         width: 300px;
         height: 300px;
     }
-    #elem-gift-box-cover {
+    #4gift-unwrapping-container #elem-gift-box-cover {
         width: 300px;
         height: 300px;
     }
-    #elem-envelope-front, #elem-envelope-back, #elem-envelope-top-1, #elem-envelope-top-2 {
+    #4gift-unwrapping-container #elem-envelope-front, #4gift-unwrapping-container #elem-envelope-back, #4gift-unwrapping-container #elem-envelope-top-1, #4gift-unwrapping-container #elem-envelope-top-2 {
         width: 300px;
     }
-    #elem-letter {
+    #4gift-unwrapping-container #elem-letter {
         width: 290px;
         min-height: 200px;
     }
-    #elem-letter p {
+    #4gift-unwrapping-container #elem-letter p {
         font-size: 14px;
     }
 }
 
 /* DESKTOP height < 450px */
 @media only screen and (max-height: 450px) and (orientation: landscape) {
-    #elem-envelope-front, #elem-envelope-back, #elem-envelope-top-1, #elem-envelope-top-2 {
+    #4gift-unwrapping-container #elem-envelope-front, #4gift-unwrapping-container #elem-envelope-back, #4gift-unwrapping-container #elem-envelope-top-1, #4gift-unwrapping-container #elem-envelope-top-2 {
         width: 220px;
     }
-    #elem-letter {
+    #4gift-unwrapping-container #elem-letter {
         width: 210px;
         min-height: 140px;
     }
-    #elem-letter p {
+    #4gift-unwrapping-container #elem-letter p {
         font-size: 12px;
     }
 }
 
 /* MOBILE >  */
 @media only screen and (max-width: 768px) and (orientation: portrait) {
-    .elem-gift-boxes {
+    #4gift-unwrapping-container .elem-gift-boxes {
         width: 350px;
         height: 350px;
     }
-    #elem-gift-box-cover {
+    #4gift-unwrapping-container #elem-gift-box-cover {
         width: 350px;
         height: 350px;
     }
-    #elem-envelope-front, #elem-envelope-back, #elem-envelope-top-1, #elem-envelope-top-2 {
+    #4gift-unwrapping-container #elem-envelope-front, #4gift-unwrapping-container #elem-envelope-back, #4gift-unwrapping-container #elem-envelope-top-1, #4gift-unwrapping-container #elem-envelope-top-2 {
         width: 320px;
     }
-    #elem-letter {
+    #4gift-unwrapping-container #elem-letter {
         width: 310px;
         min-height: 200px;
     }
-    #elem-letter p {
+    #4gift-unwrapping-container #elem-letter p {
         font-size: small;
     }
 }
 
 /* MOBILE */
 @media only screen and (max-width: 400px) and (orientation: portrait) {
-    .elem-gift-boxes {
+    #4gift-unwrapping-container .elem-gift-boxes {
         width: 310px;
         height: 310px;
     }
-    #elem-gift-box-cover {
+    #4gift-unwrapping-container #elem-gift-box-cover {
         width: 310px;
         height: 310px;
     }
-    #elem-envelope-front, #elem-envelope-back, #elem-envelope-top-1, #elem-envelope-top-2 {
+    #4gift-unwrapping-container #elem-envelope-front, #4gift-unwrapping-container #elem-envelope-back, #4gift-unwrapping-container #elem-envelope-top-1, #4gift-unwrapping-container #elem-envelope-top-2 {
         width: 295px;
     }
-    #elem-letter {
+    #4gift-unwrapping-container #elem-letter {
         width: 290px;
         min-height: 200px;
     }
 }
 
 @media only screen and (max-width: 1024px) and (orientation: portrait) {
-    #elem-letter p {
+    #4gift-unwrapping-container #elem-letter p {
         width: 250px;
     }
 }
 
-
-
-.animation-paused{
+#4gift-unwrapping-container  .animation-paused{
     -webkit-animation-play-state: paused !important;
     -moz-animation-play-state: paused !important;
-    -o-animation-play-state: paused !important; 
+    -o-animation-play-state: paused !important;
     animation-play-state: paused !important;
 }
 
@@ -438,21 +426,21 @@ button img {
     }
 }
 
-@keyframes open-1 { 
+@keyframes open-1 {
     0%   { transform: rotateX(0deg); }
     90%  { opacity: 0 }
-    100% { 
+    100% {
         opacity: 0;
         transform: rotateX(180deg);
         z-index: 13;
-        }
+    }
 }
-@keyframes open-2 { 
+@keyframes open-2 {
     0%   { transform: rotateX(0deg); }
-    100% { 
+    100% {
         transform: rotateX(180deg);
         z-index: 13;
-        }
+    }
 }
 
 @keyframes slide-down {
@@ -463,22 +451,22 @@ button img {
 
 @keyframes appear-disappear {
     50%  { opacity: 1 }
-    100% { opacity: 0 } 
+    100% { opacity: 0 }
 }
 
 
-#explosion {
-  position: absolute; 
-  width: 600px;
-  height: 300px;
-  top: 30%;
-  pointer-events: none; 
-  left: 0;
-  right: 0;
-  margin: auto;
+#4gift-unwrapping-container #explosion {
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    top: 30%;
+    pointer-events: none;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
-#explosion .particle {
-    position: absolute; 
+#4gift-unwrapping-container #explosion .particle {
+    position: absolute;
     width: 4px;
     height: 4px;
     border-radius: 50%;
@@ -487,22 +475,10 @@ button img {
 }
 
 @keyframes pop {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-.reveal-overlay {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1005;
-    display: none;
-    background-color: rgba(10, 10, 10, 0.45);
-    overflow-y: auto;
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
