@@ -53,14 +53,14 @@
 </head>
 <body style="margin: auto 0px">
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/unwrapping-new-0.8.30.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/unwrapping-new-0.8.29.min.js"></script>
 
 <script type="text/javascript">
         var giftUnwrapping = giftUnwrapping || {};
         var openGiftUnwrapping = openGiftUnwrapping || {};
 
         window.addEventListener('DOMContentLoaded', (event) => {
-            var animationContainer = document.getElementById("4gift-unwrapping-container");
+            var animationContainer = document.getElementById("animation-container");
 
             giftUnwrapping = new GiftUnwrapping();
             giftUnwrapping.initialize("brunello_cucinelli", ["A message from Jane, </br> Happy BDay", "Another message from John<br><br>I wish you the best"], animationContainer);
@@ -68,7 +68,7 @@
 </script>
 
 <div class="reveal large" id="openGiftUnwrapping" data-reveal>
-    <div id="4gift-unwrapping-container" data-reveal></div>
+    <div id="animation-container" data-reveal></div>
     <button class="close-button" id="close-button-modal" data-close aria-label="Close modal" type="button">
         <span aria-hidden="true">&times;</span>
     </button>

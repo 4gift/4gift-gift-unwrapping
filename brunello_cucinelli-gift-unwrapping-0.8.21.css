@@ -65,7 +65,7 @@ body {
     animation: appear 1s forwards;
     animation-delay: var(--restart-button-appearing-animation-delay);
 }
-button img {
+#animation-container button img {
     width: 30px;
     height: 30px;
 }
