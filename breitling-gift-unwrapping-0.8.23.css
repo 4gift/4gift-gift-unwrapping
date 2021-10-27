@@ -61,12 +61,12 @@
     left: 0;
     bottom: 0;
     margin: auto;
-    width: 500px;
+    width: 400px;
     height: 500px;
     z-index: 15;
 }
 #fourgift-unwrapping-container #elem-gift-box-tissue-paper {
-    background: url("https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/breitling/desktop/box-tissue.png");
+    background: url("https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/breitling/desktop/box-tissue.png") no-repeat;
     background-size: contain;
 }
 #fourgift-unwrapping-container #elem-gift-box-tissue-paper.animate  {
@@ -82,7 +82,7 @@
     animation-delay: var(--dust-bag-disappear-animation-delay);
 }
 #fourgift-unwrapping-container #elem-gift-box-empty {
-    background: url("https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/breitling/desktop/box-empty.png");
+    background: url("https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/breitling/desktop/box-empty.png") no-repeat;
     background-size: contain;
     transform-style: preserve-3d;
 }
@@ -131,9 +131,8 @@
     left: 0;
     bottom: 0;
     margin: auto;
-    width: 500px;
+    width: 400px;
     z-index: 20;
-
 }
 #fourgift-unwrapping-container #elem-gift-box-cover.animate {
     animation: gift-box-cover-slide-left var(--gift-box-slide-left-animation-duration) forwards;
@@ -147,6 +146,7 @@
     right: 0;
     top: 40%;
     z-index: 15;
+    width: 400px;
 }
 #fourgift-unwrapping-container #elem-envelope.animate {
     animation: envelope-enlarge var(--envelope-enlarging-animation-duration) forwards,
@@ -181,7 +181,7 @@
     right: 0;
     margin: auto;
     text-align: center;
-    min-height: 300px;
+    min-height: 283px;
     z-index: 14;
 }
 #fourgift-unwrapping-container #elem-letter.animate {
@@ -231,11 +231,11 @@
     animation-delay: var(--envelope-opening-animation-delay);
 }
 #fourgift-unwrapping-container #elem-envelope-front, #fourgift-unwrapping-container #elem-envelope-back, #fourgift-unwrapping-container #elem-envelope-top-1, #fourgift-unwrapping-container #elem-envelope-top-2 {
-    width: 500px;
+    width: 400px;
     top: 40%;
 }
 #fourgift-unwrapping-container #elem-letter {
-    width: 490px;
+    width: 395px;
 }
 
 /* DESKTOP height < 800px */
