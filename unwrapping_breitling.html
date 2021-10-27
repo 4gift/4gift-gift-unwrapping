@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4Gift Unwrapping</title
+            <!-- Compressed CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Compressed JavaScript -->
+    <!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->
+    <!-- foundation-prototype.min.css: Compressed CSS with prototyping classes -->
+    <!-- foundation-rtl.min.css: Compressed CSS with right-to-left reading direction -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <style>
+        @media print, screen and (min-width: 40em) {
+            #openGiftUnwrapping{
+
+                top: 50% !important;
+                transform: translateY(-50%);
+            }
+        }
+
+        .container {
+            /* Center vertically and horizontally */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -25px 0 0 -25px;
+        }
+
+        button img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .reveal-overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1005;
+            display: none;
+            background-color: rgba(10, 10, 10, 0.45);
+            overflow-y: auto;
+        }
+    </style>
+
+</head>
+<body style="margin: auto 0px">
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/unwrapping-new-0.8.30.min.js"></script>
+
+<script type="text/javascript">
+        var giftUnwrapping = giftUnwrapping || {};
+        var openGiftUnwrapping = openGiftUnwrapping || {};
+
+        window.addEventListener('DOMContentLoaded', (event) => {
+            var animationContainer = document.getElementById("fourgift-unwrapping-container");
+
+            giftUnwrapping = new GiftUnwrapping();
+            giftUnwrapping.initialize("breitling", ["A message from Jane, </br> Happy BDay", "Another message from John<br><br>I wish you the best"], animationContainer);
+      });
+</script>
+
+<div class="reveal large" id="openGiftUnwrapping" data-reveal>
+    <div id="fourgift-unwrapping-container" data-reveal></div>
+    <button class="close-button" id="close-button-modal" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="container">
+    <button class="button-unwrapping" data-open="openGiftUnwrapping">Open GiftUnwrapping</button>
+</div>
+
+<script>
+
+      $('.button-unwrapping').click(function(){
+        openGiftUnwrapping = new Foundation.Reveal($('#openGiftUnwrapping'));
+        setTimeout(() => giftUnwrapping.start(), 3000);
+      });
+    </script>
+</body>
+</html>
+
