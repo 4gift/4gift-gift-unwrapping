@@ -19,7 +19,7 @@ class GiftUnwrapping {
     letterMessages = [];
     pauseButton;
     imagesName = [
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/background-pattern-1.jpg",
+        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/background-pattern-5.jpg",
         "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/box-dustbag.png",
         "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/box-empty.png",
         "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/box-tissue.png",
