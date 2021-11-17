@@ -100,7 +100,7 @@ body {
 #elem-gift-box-empty {
     background: url("https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brunello_cucinelli/desktop/box-empty-1.png");
     background-size: contain;
-    transform-style: preserve-3d;
+    /* transform-style: preserve-3d; */
 }
 #elem-gift-box-empty-img {
     position: absolute;
@@ -109,7 +109,7 @@ body {
     margin: auto;
     top: 49%;
     transform: translateY(-50%) translateZ(-100px);
-    width: 65%;
+    width: 55%;
 }
 #elem-gift-box-empty-img.animate {
     animation: slide-down var(--gift-slide-down-animation-duration) forwards;

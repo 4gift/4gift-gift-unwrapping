@@ -90,7 +90,7 @@
 #fourgift-unwrapping-container #elem-gift-box-empty {
     background: url("https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brunello_cucinelli/desktop/box-empty-1.png");
     background-size: contain;
-    transform-style: preserve-3d;
+    /* transform-style: preserve-3d; */
 }
 #fourgift-unwrapping-container #elem-gift-box-empty-img {
     position: absolute;
@@ -99,7 +99,7 @@
     margin: auto;
     top: 49%;
     transform: translateY(-50%) translateZ(-100px);
-    width: 65%;
+    width: 55%;
 }
 #fourgift-unwrapping-container #elem-gift-box-empty-img.animate {
     animation: slide-down var(--gift-slide-down-animation-duration) forwards;
