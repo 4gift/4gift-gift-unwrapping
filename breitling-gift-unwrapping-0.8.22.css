@@ -245,8 +245,8 @@
         height: 420px;*/
     }
     #fourgift-unwrapping-container #elem-gift-box-cover {
-        width: 420px;
-        height: 420px;
+        /*width: 420px;
+        height: 420px;*/
     }
     #fourgift-unwrapping-container #elem-envelope-front, #fourgift-unwrapping-container #elem-envelope-back, #fourgift-unwrapping-container #elem-envelope-top-1, #fourgift-unwrapping-container #elem-envelope-top-2 {
         width: 360px;
