@@ -241,8 +241,8 @@
 /* DESKTOP height < 800px */
 @media only screen and (max-height: 800px) and (orientation: landscape) {
     #fourgift-unwrapping-container .elem-gift-boxes {
-        width: 420px;
-        height: 420px;
+        /*width: 420px;
+         height: 420px;*/
     }
     #fourgift-unwrapping-container #elem-gift-box-cover {
         /*width: 420px;
