@@ -195,9 +195,9 @@
     top: 50%;
     transform: translateY(-40%);
     margin: auto;
-    width: 80%;
+    width: 60%;
     opacity: 0;
-    font-size: 24px;
+    font-size: 14px;
 }
 #fourgift-unwrapping-container #elem-letter p.animate {
     animation: appear-disappear var(--message-showing-animation-duration) forwards;
