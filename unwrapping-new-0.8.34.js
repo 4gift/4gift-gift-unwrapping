@@ -68,7 +68,7 @@ class GiftUnwrapping {
         this.preLoad(brandName);
     }
 
-    buildAnimation(brandName, messages, containerDiv, giftUrl) {
+    buildAnimation(brandName, messages, containerDiv, giftUrl) {    
         this.containerDiv = containerDiv;
         var sourcePath = 'https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/';
         var sourceAssetPath = sourcePath + 'assets/';
@@ -83,7 +83,7 @@ class GiftUnwrapping {
         const cssLink  = document.createElement("link");
         cssLink.rel  = "stylesheet";
         cssLink.type = "text/css";
-        cssLink.href = sourceBrandizedPath + "-gift-unwrapping-0.8.25.css";
+        cssLink.href = sourceBrandizedPath + "-gift-unwrapping-0.8.26.css";
         head.appendChild(cssLink);
 
         //loader
