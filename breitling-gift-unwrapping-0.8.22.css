@@ -266,6 +266,9 @@
 
 /* DESKTOP height < 600px */
 @media only screen and (max-height: 600px) and (orientation: landscape) {
+    #fourgift-unwrapping-container {
+        height: 100vh;
+    }
     #fourgift-unwrapping-container .elem-gift-boxes {
         width: 300px;
         height: 300px;
@@ -288,6 +291,9 @@
 
 /* DESKTOP height < 450px */
 @media only screen and (max-height: 450px) and (orientation: landscape) {
+    #fourgift-unwrapping-container {
+        height: 100vh;
+    }
     #fourgift-unwrapping-container #elem-envelope-front, #fourgift-unwrapping-container #elem-envelope-back, #fourgift-unwrapping-container #elem-envelope-top-1, #fourgift-unwrapping-container #elem-envelope-top-2 {
         width: 220px;
     }
