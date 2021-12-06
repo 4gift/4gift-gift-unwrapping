@@ -1,6 +1,6 @@
 #fourgift-unwrapping-container {
     position: relative;
-    height: 100vh;
+    height: 90vh;
     overflow: hidden !important;
     background: url("https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/breitling/desktop/background-pattern-5.jpg");
 }
