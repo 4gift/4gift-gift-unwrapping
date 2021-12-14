@@ -94,6 +94,7 @@
     top: 49%;
     transform: translateY(-50%) translateZ(-100px);
     width: 70%;
+    filter: drop-shadow(7px 7px 6px rgba(0,0,0,.6));
 }
 #fourgift-unwrapping-container #elem-gift-box-empty-img.animate {
     animation: slide-down var(--gift-slide-down-animation-duration) forwards;
