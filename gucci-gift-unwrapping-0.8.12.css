@@ -180,7 +180,7 @@ button img {
     z-index: 13;
 }
 #elem-letter {
-    background-image: url("assets/gucci/desktop/letter.png");
+    background-image: url("https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/gucci/desktop/letter.png");
     background-size: contain;
     background-position-x: center;
     position: absolute;
