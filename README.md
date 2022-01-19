@@ -13,3 +13,8 @@ Do not forget: **when CSS version is updated, it should be updated in the JS as 
 
 ## Animation settings
 The GiftUnwrapping JS class is provided with a JSON parameter named `animationDurations` that allows to customize the timing of the different animations of each element. To do so, it is sufficient to replace the default numerical values with the desired ones.
+
+## Delivery system
+At the moment the delivery service used for media is https://cdn.jsdelivr.net/.
+### Purge
+in the host, replace the "cdn" with "purge" wait some seconds before the cancellation is effective
