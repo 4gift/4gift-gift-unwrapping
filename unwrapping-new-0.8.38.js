@@ -70,7 +70,7 @@ class GiftUnwrapping {
 
     buildAnimation(brandName, messages, containerDiv, giftUrl) {
         this.containerDiv = containerDiv;
-        var sourcePath = '';
+        var sourcePath = 'https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/';
         var sourceAssetPath = sourcePath + 'assets/';
         var sourceBrandizedAssetPath = sourceAssetPath + brandName;
         var sourceBrandizedPath = sourcePath + brandName;
