@@ -19,23 +19,23 @@ class GiftUnwrapping {
     letterMessages = [];
     pauseButton;
     imagesName = [
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/background-pattern-5.jpg",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/box-dustbag.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/box-empty.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/box-tissue.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/envelope-back.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/envelope-front.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/envelope-top-reverse.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/envelope-top.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/exit-icon@2x.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/letter-part-down@2x.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/letter-up-open@2x.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/letter.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/lid.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/pause-icon@2x.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/play-icon@2x.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/restart-icon@2x.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/powered_by_4gift_white.svg"
+        "/brand/desktop/background-pattern@2x.jpg",
+        "/brand/desktop/box-dustbag.png",
+        "/brand/desktop/box-empty.png",
+        "/brand/desktop/box-tissue.png",
+        "/brand/desktop/envelope-back.png",
+        "/brand/desktop/envelope-front.png",
+        "/brand/desktop/envelope-top-reverse.png",
+        "/brand/desktop/envelope-top.png",
+        "/brand/desktop/exit-icon@2x.png",
+        "/brand/desktop/letter-part-down@2x.png",
+        "/brand/desktop/letter-up-open@2x.png",
+        "/brand/desktop/letter.png",
+        "/brand/desktop/lid.png",
+        "/brand/desktop/pause-icon@2x.png",
+        "/brand/desktop/play-icon@2x.png",
+        "/brand/desktop/restart-icon@2x.png",
+        "/powered_by_4gift_white.svg"
     ]
     images = [];
     loadedImages;
