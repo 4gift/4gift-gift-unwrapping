@@ -1,13 +1,13 @@
 class GiftUnwrapping {
 
-    delayBeforeStarting = 2;    
+    delayBeforeStarting = 0.5;    
     animationDurations = {
-        "giftBoxSlideLeftAnimationDuration": 5, //overall duration (in seconds) of the slide-left animation made by the box at the beginning
-        "envelopeEnlargingAnimationDuration": 3, //overall duration (in seconds) of the zoom-in animation made by the envelope
-        "envelopeSlideLeftAnimationDuration": 3, //overall duration (in seconds) of the slide-left animation made by the envelope when leaving the screen
+        "giftBoxSlideLeftAnimationDuration": 4, //overall duration (in seconds) of the slide-left animation made by the box at the beginning
+        "envelopeEnlargingAnimationDuration": 2, //overall duration (in seconds) of the zoom-in animation made by the envelope
+        "envelopeSlideLeftAnimationDuration": 2, //overall duration (in seconds) of the slide-left animation made by the envelope when leaving the screen
         "envelopeOpeningAnimationDuration": 1.5, //overall duration (in seconds) of the opening animation of the envelope
         "letterSlideUpAnimationDuration": 1.5, //overall duration (in seconds) of the slide-up animation made by the paper letter inside the envelope
-        "messageShowingAnimationDuration": 8, //overall period of time (in seconds) on-screen for each message on the letter
+        "messageShowingAnimationDuration": 6, //overall period of time (in seconds) on-screen for each message on the letter
         "tissuePaperDisappearAnimationDuration": 1, //overall duration (in seconds) of the disappearing animation made by the tissue paper
         "dustBagDisappearAnimationDuration": 1, //overall duration (in seconds) of the disappearing animation made by the dust bag
         "giftSlideDownAnimationDuration": 2, //overall duration (in seconds) of the slide-down animation made by the gift at the end
@@ -19,25 +19,23 @@ class GiftUnwrapping {
     letterMessages = [];
     pauseButton;
     imagesName = [
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/background-pattern@2x.jpg",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/box-dustbag.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/box-empty.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/box-tissue.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/envelope-back.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/envelope-front.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/envelope-top-reverse.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/envelope-top.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/exit-icon@2x.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/letter-part-down-2@2x.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/letter-up-open@2x.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/letter.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/lid.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/pause-icon@2x.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/play-icon@2x.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/desktop/restart-icon@2x.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/mobile/dust-bag@2x.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/brand/mobile/tissue-paper@2x.png",
-        "https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/assets/powered_by_4gift_white.svg"
+        "/brand/desktop/background-pattern@2x.jpg",
+        "/brand/desktop/box-dustbag.png",
+        "/brand/desktop/box-empty.png",
+        "/brand/desktop/box-tissue.png",
+        "/brand/desktop/envelope-back.png",
+        "/brand/desktop/envelope-front.png",
+        "/brand/desktop/envelope-top-reverse.png",
+        "/brand/desktop/envelope-top.png",
+        "/brand/desktop/exit-icon@2x.png",
+        "/brand/desktop/letter-part-down@2x.png",
+        "/brand/desktop/letter-up-open@2x.png",
+        "/brand/desktop/letter.png",
+        "/brand/desktop/lid.png",
+        "/brand/desktop/pause-icon@2x.png",
+        "/brand/desktop/play-icon@2x.png",
+        "/brand/desktop/restart-icon@2x.png",
+        "/powered_by_4gift_white.svg"
     ]
     images = [];
     loadedImages;
@@ -58,7 +56,7 @@ class GiftUnwrapping {
             _this.images.push(img);
             img.onload = (ev) => {
                 _this.loadedImages++;
-                if (_this.loadedImages >= _this.imagesName.length) {
+                if (_this.loadedImages >= 14) {
                     _this.loader.style.display = 'none';
                 }
             };
@@ -72,7 +70,7 @@ class GiftUnwrapping {
 
     buildAnimation(brandName, messages, containerDiv, giftUrl) {
         this.containerDiv = containerDiv;
-        var sourcePath = 'https://cdn.jsdelivr.net/gh/4gift/4gift-gift-unwrapping/';
+        var sourcePath = '';
         var sourceAssetPath = sourcePath + 'assets/';
         var sourceBrandizedAssetPath = sourceAssetPath + brandName;
         var sourceBrandizedPath = sourcePath + brandName;
@@ -85,7 +83,7 @@ class GiftUnwrapping {
         const cssLink  = document.createElement("link");
         cssLink.rel  = "stylesheet";
         cssLink.type = "text/css";
-        cssLink.href = sourceBrandizedPath + "-gift-unwrapping-0.8.12.min.css";
+        cssLink.href = sourceBrandizedPath + "-gift-unwrapping-0.8.29.css";
         head.appendChild(cssLink);
 
         //loader
@@ -156,11 +154,11 @@ class GiftUnwrapping {
         this.elems.push(elemGiftBoxEmpty);
 
         //gift box dust bag
-        const elemGiftBoxDustBag = document.createElement("div");
-        elemGiftBoxDustBag.id = "elem-gift-box-dust-bag";
-        elemGiftBoxDustBag.classList.add("elem-gift-boxes");
-        this.containerDiv.appendChild(elemGiftBoxDustBag);
-        this.elems.push(elemGiftBoxDustBag);
+        //const elemGiftBoxDustBag = document.createElement("div");
+        //elemGiftBoxDustBag.id = "elem-gift-box-dust-bag";
+        //elemGiftBoxDustBag.classList.add("elem-gift-boxes");
+        //this.containerDiv.appendChild(elemGiftBoxDustBag);
+        //this.elems.push(elemGiftBoxDustBag);
 
         //gift box tissue paper
         const elemGiftBoxTissuePaper = document.createElement("div");
@@ -228,14 +226,23 @@ class GiftUnwrapping {
         document.documentElement.style.setProperty('--letter-slide-up-animation-delay', letterSlideUpAnimationDelay + "s");
         document.documentElement.style.setProperty('--letter-slide-up-animation-duration', this.animationDurations.letterSlideUpAnimationDuration + "s");
 
-        messages.forEach( (message, index) => {
-            const messageShowingAnimationDelay = envelopeOpeningAnimationDelay + index*this.animationDurations.messageShowingAnimationDuration;
-            document.documentElement.style.setProperty('--message-showing-animation-delay-' + index, messageShowingAnimationDelay + "s");
-            document.documentElement.style.setProperty('--message-showing-animation-duration', this.animationDurations.messageShowingAnimationDuration + "s");
-            this.letterMessages[index].style.animationDelay = "var(--message-showing-animation-delay-" + index + ")";
-        });
+        if (messages.length == 1) {
+            const messageShowingAnimationDelay = envelopeOpeningAnimationDelay;
+            document.documentElement.style.setProperty('--message-showing-animation-delay-0', messageShowingAnimationDelay + "s");
+            document.documentElement.style.setProperty('--message-showing-animation-duration', (this.animationDurations.messageShowingAnimationDuration + 2) + "s");
+            this.letterMessages[0].style.animationDelay = "var(--message-showing-animation-delay-0)";
+        } else {
+            messages.forEach( (message, index) => {
+                const messageShowingAnimationDelay = envelopeOpeningAnimationDelay + index*this.animationDurations.messageShowingAnimationDuration;
+                document.documentElement.style.setProperty('--message-showing-animation-delay-' + index, messageShowingAnimationDelay + "s");
+                document.documentElement.style.setProperty('--message-showing-animation-duration', this.animationDurations.messageShowingAnimationDuration + "s");
+                this.letterMessages[index].style.animationDelay = "var(--message-showing-animation-delay-" + index + ")";
+            });
+        }
 
-        const envelopeSlideLeftAnimationDelay = envelopeOpeningAnimationDelay + this.animationDurations.messageShowingAnimationDuration*messages.length - 2;
+        const envelopeSlideLeftAnimationDelay = messages.length == 1 ? 
+            envelopeOpeningAnimationDelay + this.animationDurations.messageShowingAnimationDuration*messages.length
+            : envelopeOpeningAnimationDelay + this.animationDurations.messageShowingAnimationDuration*messages.length - 2
         document.documentElement.style.setProperty('--envelope-slide-left-animation-delay', envelopeSlideLeftAnimationDelay + "s");
         document.documentElement.style.setProperty('--envelope-slide-left-animation-duration', this.animationDurations.envelopeSlideLeftAnimationDuration + "s");
 
