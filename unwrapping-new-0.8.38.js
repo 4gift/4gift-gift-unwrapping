@@ -31,7 +31,7 @@ class GiftUnwrapping {
         "/brand/desktop/letter-part-down@2x.png",
         "/brand/desktop/letter-up-open@2x.png",
         "/brand/desktop/letter.png",
-        "/brand/desktop/lid.png",
+        "/brand/desktop/lid.jpg",
         "/brand/desktop/pause-icon@2x.png",
         "/brand/desktop/play-icon@2x.png",
         "/brand/desktop/restart-icon@2x.png",
